@@ -1,8 +1,7 @@
-function gridFunction(row, col){
+function gridFunction(row,col){
     const container = document.querySelector(".container");
-    container.innerHTML = ""; // Clear previous grid if any
     // loop through the number of rows and columns
-    for(let i =0; i < row * col; i++){
+    for(let i=0; i < row * col; i++){
         // create a div element
         const gridItem = document.createElement("div");
         // add class to the div element
@@ -11,7 +10,7 @@ function gridFunction(row, col){
     }
 }
 // call the function with the number of rows and columns
-gridFunction(16, 16);
+gridFunction(16,16);
 
 // DOM Manipulation
 const titles = document.querySelector(".title");
@@ -19,6 +18,7 @@ titles.textContent = "Etch - a - Sketch";
 titles.style.fontSize = "50px";
 titles.style.color = "black"
 titles.fontFamilyt ="auto"
+titles.style.color ="white"
 
 // set the color change on hover for the grids function
 function gridColorChange(){
@@ -33,8 +33,8 @@ gridHover.forEach(function(gridHover){
         const randomColor = Math.floor(Math.random() * colors.length);   
         // change the background color to black on hover
         gridHover.style.backgroundColor = colors[randomColor];
-        gridHover.style.opacity = 1;
-        gridHover.style.transition = "background-color 0.3s ease-in-out";
+        gridHover.style.opacity = 5;
+        gridHover.style.transition = "background-color 0.5s ease-in-out";
         gridHover.style.opacity = 0.5;
     });
 })}
@@ -47,8 +47,8 @@ gridResize.addEventListener('click', function(){
     let userInput = prompt('Enter number of squares per side (max 100)');
     // set conditions
     if (userInput > 0 && userInput <= 100) {
+        let result = gridColorChange();
         gridFunction(userInput, userInput); // Call gridFunction with valid input
-        let result = gridColorChange()
         return result
 
     } else {
@@ -59,5 +59,5 @@ gridResize.addEventListener('click', function(){
 // grid reset functionality
 const gridReset = document.querySelector(".reset");
 gridReset.addEventListener('click', function(){
-    gridFunction(16,16)
+    gridFunction(0,0)
 })

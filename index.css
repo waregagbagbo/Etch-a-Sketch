@@ -3,43 +3,49 @@
 }
 
 body{
-    background-color: #000;
+    background-color:#B06500;
+    display:flex;;
     font-family: Arial, sans-serif;
-    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    color: #333;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1.5;
-    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGdyYXZpdHxlbnwwfHx8fDE2OTI3NTY5MjM&ixlib=rb-4.0.3&q=80&w=1080');
+    height:100vh;
+   /*background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGdyYXZpdHxlbnwwfHx8fDE2OTI3NTY5MjM&ixlib=rb-4.0.3&q=80&w=1080');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     filter: blur(0px);
-    transition: filter 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out;*/
 }
 .container{
-    display:grid;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 640px;
+    height: 640px;
+
+   /* display:grid;
     grid-template-columns: repeat(16, 1fr); 
     grid-template-rows: repeat(16, 1fr);
     gap: 1px;
     width: 640px;
     height: 640px; 
     border: 1px solid black;
-    padding: 10px;
+    padding: 10px;*/
 }
 
 .grid-item{
-    background-color:#f2f2f2;
+    width:calc(100%/16);
+    height:calc(100%/16);
+    background-color: #fff;
+    border: 1px solid #444;
+    justify-content:center
+    /*background-color:#f2f2f2;
     align-items: center;
     justify-content: center;
     border: 1px solid black;
     font-size: 18px;
-    font-weight: bold;    
+    font-weight: bold; */ 
 }
 .grid-item:hover{
     cursor:pointer;
