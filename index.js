@@ -1,5 +1,6 @@
 function gridFunction(row,col){
     const container = document.querySelector(".container");
+    container.innerHTML = "" // clear existing grid
     // loop through the number of rows and columns
     for(let i=0; i < row * col; i++){
         // create a div element
@@ -47,10 +48,9 @@ gridResize.addEventListener('click', function(){
     let userInput = prompt('Enter number of squares per side (max 100)');
     // set conditions
     if (userInput > 0 && userInput <= 100) {
-        let result = gridColorChange();
+        const container = document.querySelector('.container')
+        container.innerHTML = "" // clear existing grid
         gridFunction(userInput, userInput); // Call gridFunction with valid input
-        return result
-
     } else {
         alert('Please try a value between 1 and 100');
     }
@@ -59,5 +59,5 @@ gridResize.addEventListener('click', function(){
 // grid reset functionality
 const gridReset = document.querySelector(".reset");
 gridReset.addEventListener('click', function(){
-    gridFunction(0,0)
+    gridFunction(16, 16); // Reset to default grid size
 })
