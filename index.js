@@ -7,22 +7,17 @@
     const colors = data.schemes[0].colors;
     console.log(colors)
 }*/
-
-fetch(`https://www.thecolorapi.com/random?format=json`)
-  .then(response => response.json())
-  .then(data => {
-    console.log(`Name: ${data.name.value}`);
-    console.log(`RGB: ${data.rgb.value}`);
-    console.log(`HSL: ${data.hsl.value}`);
-  });
-
-
-
-
-
-
-
-
+async function colorApi(){
+    try{
+        const response = await fetch(`https://www.thecolorapi.com/random?format=json`)
+        const data = await response.json();
+        return data.hex.value
+    }
+    catch(error){
+        console.error('Error',error);
+        return 'f2f2f2'
+    }
+}
 
 function gridFunction(row,col){
     const container = document.querySelector(".container");
@@ -59,12 +54,13 @@ const gridHover = document.querySelectorAll(".grid-item"); // all the grids
 // loop through the grid items
 gridHover.forEach(function(gridHover){
     // add event listener to the grid items
-    gridHover.addEventListener("mouseover", function(){
-        const colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink","brown", "gray", "black","maroon", "navy", "teal", "lime", "olive", "coral","ginger", "salmon", "khaki", "plum", "turquoise"];
+    gridHover.addEventListener("mouseover",async function(){
+        //const colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink","brown", "gray", "black","maroon", "navy", "teal", "lime", "olive", "coral","ginger", "salmon", "khaki", "plum", "turquoise"];
         // get a random color from the array
-        const randomColor = Math.floor(Math.random() * colors.length);   
+        //const randomColor = Math.floor(Math.random() * colors.length); 
+        const randomColor = await colorApi();
         // change the background color to black on hover
-        gridHover.style.backgroundColor = colors[randomColor];
+        gridHover.style.backgroundColor = randomColor
         gridHover.style.opacity = 5;
         gridHover.style.transition = "background-color 0.5s ease-in-out";
         gridHover.style.opacity = 0.5;
