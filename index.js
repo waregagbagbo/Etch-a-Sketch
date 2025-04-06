@@ -29,7 +29,6 @@ titles.style.color ="white";
 // set the color change on hover for the grids function
 
 function gridColorChange(){
-
 const gridHover = document.querySelectorAll(".grid-item"); // all the grids
 // loop through the grid items
 gridHover.forEach(function(gridHover){
@@ -51,11 +50,14 @@ gridColorChange()
 // DOM for the buttons
 const gridResize = document.querySelector('.resize');
 gridResize.addEventListener('click', function(){
-    let userInput = prompt(parseInt('Enter number of squares per side (max 100)'));
+    let userInput = prompt('Enter number of squares per side (max 100)');
     // set conditions
     if (userInput > 0 && userInput <= 100) {
         gridFunction(userInput,userInput); // Call gridFunction with valid input
-    } else {
+        gridColorChange()
+    } 
+    
+    else {
         alert('Please try a value between 1 and 100');
     }
 })
@@ -65,4 +67,5 @@ gridResize.addEventListener('click', function(){
 const gridReset = document.querySelector(".reset");
 gridReset.addEventListener('click', function(){
     gridFunction(16,16); // Reset to default grid size
+    gridColorChange()
 })
