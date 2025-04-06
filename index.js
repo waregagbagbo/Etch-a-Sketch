@@ -1,3 +1,29 @@
+// implementing fetching random color from an API using color API
+
+// function to fetch random color from the API
+/*async function fetchRandomColor(){
+    const response = await fetch('https://www.thecolorapi.com/random?format=json');
+    //const data = await response.json();
+    const colors = data.schemes[0].colors;
+    console.log(colors)
+}*/
+
+fetch(`https://www.thecolorapi.com/random?format=json`)
+  .then(response => response.json())
+  .then(data => {
+    console.log(`Name: ${data.name.value}`);
+    console.log(`RGB: ${data.rgb.value}`);
+    console.log(`HSL: ${data.hsl.value}`);
+  });
+
+
+
+
+
+
+
+
+
 function gridFunction(row,col){
     const container = document.querySelector(".container");
     container.innerHTML = '' // clear existing grid
