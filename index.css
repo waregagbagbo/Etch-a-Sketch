@@ -9,6 +9,8 @@ body{
     justify-content: center;
     align-items: center;
     height:100vh;
+    padding: auto;
+    margin: auto;
 }
 .container {
     display:flex;
