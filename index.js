@@ -54,7 +54,6 @@ gridResize.addEventListener('click', function(){
     let userInput = prompt(parseInt('Enter number of squares per side (max 100)'));
     // set conditions
     if (userInput > 0 && userInput <= 100) {
-
         gridFunction(userInput,userInput); // Call gridFunction with valid input
     } else {
         alert('Please try a value between 1 and 100');
