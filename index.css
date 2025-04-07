@@ -5,12 +5,6 @@
 
 body{
     background-color:#B06500;
-    display:flex;
-    font-family: Arial, sans-serif;
-    justify-content: center;
-    align-items: center;
-    height:100vh;
-    margin: auto;
 }
 .container {
     display:flex;
@@ -47,7 +41,7 @@ body{
 }
 .controls{
     position:absolute;
-    margin-top:40px;
+    margin-top:20px;
     bottom: -40px;
     left: 50%;
     transform: translateX(-50%);

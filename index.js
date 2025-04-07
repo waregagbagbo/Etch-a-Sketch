@@ -1,12 +1,4 @@
 // implementing fetching random color from an API using color API
-
-// function to fetch random color from the API
-/*async function fetchRandomColor(){
-    const response = await fetch('https://www.thecolorapi.com/random?format=json');
-    //const data = await response.json();
-    const colors = data.schemes[0].colors;
-    console.log(colors)
-}*/
 async function colorApi(){
     try{
         const response = await fetch(`https://www.thecolorapi.com/random?format=json`)
@@ -14,8 +6,8 @@ async function colorApi(){
         return data.hex.value
     }
     catch(error){
-        console.error('Error',error);
-        return 'f2f2f2'
+        console.error('Color error',error);
+        return 'black'
     }
 }
 
@@ -37,8 +29,8 @@ function gridFunction(row,col){
         container.appendChild(gridItem); // append the div to the container
     }
 }
-// call the function with the number of rows and columns
 gridFunction(16,16);
+
 
 // DOM Manipulation
 const titles = document.querySelector(".title");
@@ -48,18 +40,12 @@ titles.style.color = "black";
 titles.style.color ="white";
 
 // set the color change on hover for the grids function
-
 function gridColorChange(){
 const gridHover = document.querySelectorAll(".grid-item"); // all the grids
 // loop through the grid items
 gridHover.forEach(function(gridHover){
     // add event listener to the grid items
     gridHover.addEventListener("mouseover",async function(){
-        //const colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink","brown", "gray", "black","maroon", "navy", "teal", "lime", "olive", "coral","ginger", "salmon", "khaki", "plum", "turquoise"];
-        // get a random color from the array
-        //const randomColor = Math.floor(Math.random() * colors.length); 
-        const randomColor = await colorApi();
-        // change the background color to black on hover
         gridHover.style.backgroundColor = randomColor
         gridHover.style.opacity = 5;
         gridHover.style.transition = "background-color 0.5s ease-in-out";
