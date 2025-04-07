@@ -5,15 +5,19 @@
 
 body{
     background-color:#B06500;
+    display:flex;
+    justify-content:center;
 }
+
 .container {
     display:flex;
     flex-wrap: wrap;
-    width: 640px; /* or any desired width */
-    height: 640px; /* or any desired height */
+    width: 470px; /* or any desired width */
+    height: 470px; /* or any desired height */
     border: 2px solid #444;
-  }
-  
+    align-items: center;
+    margin: 100px 40px;
+  }  
   .grid-item {
     background-color: #fff;
     border: 1px solid #444;
@@ -31,18 +35,16 @@ body{
 }
 .title{
     position: absolute;
-    top: -30px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 25px;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .controls{
     position:absolute;
-    margin-top:20px;
-    bottom: -40px;
+    margin-top:50px;
+    margin-bottom:-20px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 18px;

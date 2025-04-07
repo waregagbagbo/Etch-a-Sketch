@@ -35,7 +35,7 @@ gridFunction(16,16);
 // DOM Manipulation
 const titles = document.querySelector(".title");
 titles.textContent = "Etch-a- Sketch";
-titles.style.fontSize = "50px";
+titles.style.fontSize = "40px";
 titles.style.color = "black";
 titles.style.color ="white";
 
@@ -46,6 +46,7 @@ const gridHover = document.querySelectorAll(".grid-item"); // all the grids
 gridHover.forEach(function(gridHover){
     // add event listener to the grid items
     gridHover.addEventListener("mouseover",async function(){
+        const randomColor = await colorApi();
         gridHover.style.backgroundColor = randomColor
         gridHover.style.opacity = 5;
         gridHover.style.transition = "background-color 0.5s ease-in-out";
